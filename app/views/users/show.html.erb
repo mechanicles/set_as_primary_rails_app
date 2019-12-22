@@ -1,0 +1,42 @@
+<h2><%= @user.name %> <%= link_to "Edit", edit_user_path(@user.id) %></h2>
+<hr>
+<h3><%= @user.name %>'s email addresses:</h3>
+<table>
+  <thead>
+    <th>
+      Email
+    </th>
+    <th>
+      Primary?
+    </th>
+  </thead>
+  <tbody>
+    <% @user.email_addresses.each do |email_address| %>
+      <tr>
+        <td><%= email_address.email %></td>
+        <td><%= email_address.primary? ? "Yes" : "No" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<hr>
+<h3><%= @user.name %>'s addresses:</h3>
+<table>
+  <thead>
+    <th>
+      Address
+    </th>
+    <th>
+      Primary?
+    </th>
+  </thead>
+  <tbody>
+    <% @user.addresses.each do |address| %>
+      <tr>
+        <td><%= address.data %></td>
+        <%# Use/create 'primary?' method %>
+        <td><%= address.default? ? "Yes" : "No" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
