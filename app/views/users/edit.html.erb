@@ -1,0 +1,25 @@
+<h2>Edit <%= @user.name %></h2>
+<hr>
+
+<%= form_for @user do |f| %>
+  <h3><%= @user.name %>'s email addresses:</h3>
+  <%= f.fields_for :email_addresses do |eaf| %>
+    <%= eaf.label :email %>
+    <%= eaf.text_field :email %>
+    <%= eaf.label :primary %>
+    <%= radio_button_tag "user[primary_email_address]", eaf.index, eaf.object.primary %>
+    <br>
+  <% end %>
+  <hr>
+  <h3><%= @user.name %>'s addrsses:</h3>
+  <%= f.fields_for :addresses do |af| %>
+    <%= af.label :address %>
+    <%= af.text_field :data %>
+    <%= af.label :default %>
+    <%= radio_button_tag "user[primary_address]", af.index, af.object.default %>
+    <br>
+  <% end %>
+  <br>
+  <%= f.submit 'Submit', :disable_with => 'Submiting...' %>
+<% end %>
+
