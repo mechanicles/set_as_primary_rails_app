@@ -2,7 +2,7 @@
 <hr>
 
 <%= form_for @user do |f| %>
-  <h3><%= @user.name %>'s email addresses:</h3>
+  <h3>Email addresses:</h3>
   <%= f.fields_for :email_addresses do |eaf| %>
     <%= eaf.label :email %>
     <%= eaf.text_field :email %>
@@ -11,7 +11,7 @@
     <br>
   <% end %>
   <hr>
-  <h3><%= @user.name %>'s addrsses:</h3>
+  <h3>Addrsses:</h3>
   <%= f.fields_for :addresses do |af| %>
     <%= af.label :address %>
     <%= af.text_field :data %>
@@ -20,6 +20,6 @@
     <br>
   <% end %>
   <br>
-  <%= f.submit 'Submit', :disable_with => 'Submiting...' %>
+  <%= f.submit "Submit", disable_with: "Submiting..." %>
 <% end %>
 
