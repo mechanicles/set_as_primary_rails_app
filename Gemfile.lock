@@ -1,3 +1,9 @@
+PATH
+  remote: /Users/santosh/mywork/my_opensource/set_as_primary
+  specs:
+    set_as_primary (0.1.0)
+      activesupport (>= 4.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -140,6 +146,7 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
       ffi (~> 1.0)
+    rb-readline (0.5.5)
     regexp_parser (1.6.0)
     ruby_dep (1.5.0)
     rubyzip (2.0.0)
@@ -207,8 +214,10 @@ DEPENDENCIES
   listen (>= 3.0.5, < 3.2)
   puma (~> 4.1)
   rails (~> 6.0.2, >= 6.0.2.1)
+  rb-readline
   sass-rails (>= 6)
   selenium-webdriver
+  set_as_primary!
   spring
   spring-watcher-listen (~> 2.0.0)
   sqlite3 (~> 1.4)
