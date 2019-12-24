@@ -5,5 +5,5 @@ class EmailAddress < ApplicationRecord
 
   belongs_to :user
 
-  set_as_primary owner_key: :user_id
+  set_as_primary owner_key: :user
 end

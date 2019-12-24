@@ -5,5 +5,5 @@ class Address < ApplicationRecord
 
   belongs_to :owner, polymorphic: true
 
-  set_as_primary :default, polymorphic_key: :owner
+  set_as_primary :default, owner_key: :owner
 end
