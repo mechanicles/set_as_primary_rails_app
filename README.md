@@ -1,24 +1,14 @@
-# README
+Demo Rails app for [set_as_primary](https://github.com/mechanicles/set_as_primary)
+gem.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Setup:
 
-Things you may want to cover:
+```shell
+rails db:create db:migrate db:seed
+```
 
-* Ruby version
+Run application:
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```shell
+bin/rails server
+```
