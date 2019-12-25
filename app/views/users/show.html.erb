@@ -1,42 +1,50 @@
-<h2><%= @user.name %> <%= link_to "Edit", edit_user_path(@user.id) %></h2>
-<hr>
-<h3>Email addresses:</h3>
-<table>
-  <thead>
-    <th>
-      Email
-    </th>
-    <th>
-      Primary?
-    </th>
-  </thead>
-  <tbody>
-    <% @user.email_addresses.each do |email_address| %>
-      <tr>
-        <td><%= email_address.email %></td>
-        <td><%= email_address.primary? ? "Yes" : "No" %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-<hr>
-<h3>Addresses:</h3>
-<table>
-  <thead>
-    <th>
-      Address
-    </th>
-    <th>
-      Primary?
-    </th>
-  </thead>
-  <tbody>
-    <% @user.addresses.each do |address| %>
-      <tr>
-        <td><%= address.data %></td>
-        <%# Use/create 'primary?' method %>
-        <td><%= address.default? ? "Yes" : "No" %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div id="banner" class="page-header">
+  <div class="row">
+    <div class="col-lg-8 col-md-7 col-sm-6">
+      <h3>
+        <%= @user.name %> <%= link_to "Edit", edit_users_path, class: "btn btn-link" %>
+      </h3>
+    </div>
+  </div>
+</div>
+<div class="jumbotron">
+  <h6 class="text-primary">Email addresses:</h6>
+  <table class="table table-hover">
+    <thead>
+      <th scope="col">
+        Email
+      </th>
+      <th scope="col">
+        Primary?
+      </th>
+    </thead>
+    <tbody>
+      <% @user.email_addresses.each do |email_address| %>
+        <tr>
+          <td><%= email_address.email %></td>
+          <td><%= email_address.primary? ? "Yes" : "No" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <hr class="my-4">
+  <h6 class="text-primary">Addresses:</h6>
+  <table class="table table-hover">
+    <thead>
+      <th scope="col">
+        Full address
+      </th>
+      <th scope="col">
+        Primary?
+      </th>
+    </thead>
+    <tbody>
+      <% @user.addresses.each do |address| %>
+        <tr>
+          <td><%= address.data %></td>
+          <td><%= address.default? ? "Yes" : "No" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

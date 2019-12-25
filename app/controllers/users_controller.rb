@@ -2,12 +2,11 @@
 
 class UsersController < ApplicationController
   def show
-    @user = User.includes(:email_addresses, :addresses)
-                .find_by_name('John Smith')
+    @user = User.includes(:email_addresses, :addresses).first
   end
 
   def edit
-    @user = User.includes(:email_addresses, :addresses).find(params[:id])
+    @user = User.includes(:email_addresses, :addresses).first
   end
 
   def update
@@ -17,11 +16,11 @@ class UsersController < ApplicationController
     address_index = params[:user][:primary_address]
     params[:user][:addresses_attributes][address_index][:default] = true
 
-    @user = User.find(params[:id])
+    @user = User.first
     respond_to do |format|
       if @user.update(user_params)
         flash[:notice] = 'User was successfully updated.'
-        format.html { redirect_to(@user) }
+        format.html { redirect_to(users_path) }
       else
         format.html { render action: 'edit' }
       end

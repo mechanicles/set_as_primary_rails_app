@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/faker-ruby/faker.git
+  revision: 179ff348e3eb14cdabb17fcbad4c0f22e502a321
+  branch: master
+  specs:
+    faker (2.9.0)
+      i18n (>= 1.6, < 1.8)
+
 PATH
   remote: /Users/santosh/mywork/my_opensource/set_as_primary
   specs:
@@ -210,6 +218,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.2)
   byebug
   capybara (>= 2.15)
+  faker!
   jbuilder (~> 2.7)
   listen (>= 3.0.5, < 3.2)
   puma (~> 4.1)

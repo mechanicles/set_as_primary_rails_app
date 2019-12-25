@@ -1,25 +1,37 @@
-<h2>Edit <%= @user.name %></h2>
-<hr>
-
-<%= form_for @user do |f| %>
-  <h3>Email addresses:</h3>
-  <%= f.fields_for :email_addresses do |eaf| %>
-    <%= eaf.label :email %>
-    <%= eaf.text_field :email %>
-    <%= eaf.label :primary %>
-    <%= radio_button_tag "user[primary_email_address]", eaf.index, eaf.object.primary %>
+<div id="banner" class="page-header">
+  <div class="row">
+    <div class="col-lg-8 col-md-7 col-sm-6">
+      <h3>Edit <%= @user.name %> <%= link_to "Back", users_path, class: "btn btn-link" %> </h3>
+    </div>
+  </div>
+</div>
+<div class="jumbotron">
+  <%= form_for @user, url: users_path do |f| %>
+    <h6 class="text-primary">Email addresses:</h6>
+    <%= f.fields_for :email_addresses do |eaf| %>
+      <div class="form-group row">
+        <%= eaf.label "Email address", class: "col-sm-2 col-form-label" %>
+        <div class="col-sm-5">
+          <%= eaf.text_field :email, class:"form-control", readonly: true %>
+        </div>
+        <%= eaf.label :primary, class: "col-sm-1 col-form-label" %>
+        <%= radio_button_tag "user[primary_email_address]", eaf.index, eaf.object.primary %>
+      </div>
+    <% end %>
+    <hr class="my-4">
+    <h6 class="text-primary">Addresses:</h6>
+    <%= f.fields_for :addresses do |af| %>
+      <div class="form-group row">
+        <%= af.label "Full address", class: "col-sm-2 col-form-label" %>
+        <div class="col-sm-5">
+          <%= af.text_field :data, class:"form-control", readonly: true %>
+        </div>
+        <%= af.label :primary, class: "col-sm-1 col-form-label" %>
+        <%= radio_button_tag "user[primary_address]", af.index, af.object.default %>
+      </div>
+    <% end %>
     <br>
+    <%= f.submit "Submit", disable_with: "Submiting...", class: "btn btn-primary" %>
   <% end %>
-  <hr>
-  <h3>Addrsses:</h3>
-  <%= f.fields_for :addresses do |af| %>
-    <%= af.label :address %>
-    <%= af.text_field :data %>
-    <%= af.label :default %>
-    <%= radio_button_tag "user[primary_address]", af.index, af.object.default %>
-    <br>
-  <% end %>
-  <br>
-  <%= f.submit "Submit", disable_with: "Submiting..." %>
-<% end %>
+</div>
 

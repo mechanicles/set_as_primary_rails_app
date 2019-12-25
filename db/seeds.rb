@@ -8,28 +8,18 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-user = User.create!(name: 'John Smith')
+user = User.create!(name: 'Jane Smith')
 
-EmailAddress.create!(
-  email: 'john1@example.com',
-  primary: false,
-  user: user
-)
+3.times do
+  EmailAddress.create!(
+    email: Faker::Internet.email,
+    primary: false,
+    user: user
+  )
 
-EmailAddress.create!(
-  email: 'john_real@example.com',
-  primary: true,
-  user: user
-)
-
-Address.create!(
-  data: 'Pune, India',
-  default: true,
-  owner: user
-)
-
-Address.create!(
-  data: 'Mumbai, India',
-  default: false,
-  owner: user
-)
+  Address.create!(
+    data: Faker::Address.full_address,
+    default: false,
+    owner: user
+  )
+end
