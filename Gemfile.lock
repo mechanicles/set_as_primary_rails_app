@@ -6,8 +6,10 @@ GIT
     faker (2.9.0)
       i18n (>= 1.6, < 1.8)
 
-PATH
-  remote: /Users/santosh/mywork/my_opensource/set_as_primary
+GIT
+  remote: https://github.com/mechanicles/set_as_primary
+  revision: 6742c1128d7a3db216b0a216871317ebfe57b8f5
+  branch: basic
   specs:
     set_as_primary (0.1.0)
       activesupport (>= 4.2)
