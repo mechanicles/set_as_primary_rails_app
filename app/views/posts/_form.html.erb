@@ -1,0 +1,13 @@
+<%= form_for(post) do |f| %>
+  <div class="form-group">
+    <%= f.label :title, class: "col-sm-2 col-form-label" %>
+    <%= f.text_field :title, class: "form-control", readonly: true %>
+
+    <%= f.label :content, class: "col-sm-2 col-form-label" %>
+    <%= f.text_area :content, class: "form-control", readonly: true %>
+
+    <%= f.label :primary, class: "col-sm-1 col-form-label" %>
+    <%= f.check_box :primary %>
+  </div>
+  <%= f.submit class: "btn btn-primary" %>
+<% end %>

@@ -12,7 +12,7 @@
       <div class="form-group row">
         <%= eaf.label "Email address", class: "col-sm-2 col-form-label" %>
         <div class="col-sm-5">
-          <%= eaf.text_field :email, class:"form-control", readonly: true %>
+          <%= eaf.text_field :email, class: "form-control", readonly: true %>
         </div>
         <%= eaf.label :primary, class: "col-sm-1 col-form-label" %>
         <%= radio_button_tag "user[primary_email_address]", eaf.index, eaf.object.primary %>
@@ -31,7 +31,7 @@
       </div>
     <% end %>
     <br>
-    <%= f.submit "Submit", disable_with: "Submiting...", class: "btn btn-primary" %>
+    <%= f.submit class: "btn btn-primary" %>
   <% end %>
 </div>
 

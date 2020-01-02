@@ -21,3 +21,7 @@
 table td {
   width: 50%;
 }
+
+.modified-small {
+  font-weight: 300;
+}

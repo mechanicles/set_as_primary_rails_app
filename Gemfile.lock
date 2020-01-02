@@ -6,6 +6,12 @@ GIT
     faker (2.9.0)
       i18n (>= 1.6, < 1.8)
 
+PATH
+  remote: /Users/santosh/mywork/my_opensource/set_as_primary
+  specs:
+    set_as_primary (0.1.2)
+      activesupport (>= 4.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -166,8 +172,6 @@ GEM
     selenium-webdriver (3.142.6)
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
-    set_as_primary (0.1.0)
-      activesupport (>= 4.2)
     spring (2.1.0)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
@@ -223,7 +227,7 @@ DEPENDENCIES
   rb-readline
   sass-rails (>= 6)
   selenium-webdriver
-  set_as_primary
+  set_as_primary!
   spring
   spring-watcher-listen (~> 2.0.0)
   turbolinks (~> 5)

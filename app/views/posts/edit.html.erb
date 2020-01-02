@@ -1,0 +1,10 @@
+<div id="banner" class="page-header">
+  <div class="row">
+    <div class="col-lg-8 col-md-7 col-sm-6">
+      <h3>Edit <%= @post.title %> <%= link_to "Back", posts_path, class: "btn btn-link" %> </h3>
+    </div>
+  </div>
+</div>
+<div class="jumbotron">
+  <%= render 'form', post: @post %>
+</div>

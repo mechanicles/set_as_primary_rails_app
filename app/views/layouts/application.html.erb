@@ -11,8 +11,22 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container">
         <%= link_to "&#x2705; SetAsPrimary".html_safe, root_path, class: "navbar-brand" %>
+        <div class="collapse navbar-collapse" id="navbarColor03">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item <%= active("users") %>">
+              <%= link_to "User", users_path, class: "nav-link" %>
+            </li>
+            <li class="nav-item <%= active("posts") %>">
+              <%= link_to "Posts", posts_path, class: "nav-link" %>
+            </li>
+            <li>
+              <%= link_to "Read blog post here", "http://blog.mechanicles.com/2019/12/26/primary-or-default-flag-to-the-rails-models.html",
+                          target: "_blank", class: "nav-link" %>
+            </li>
+          </ul>
+        </div>
         <mark>
-          The simplest way to handle the primary or default flag to your models
+          The simplest way to handle the primary or default flag to your Rails models
         </mark>
       </div>
     </nav>

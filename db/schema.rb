@@ -10,7 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_22_134411) do
+ActiveRecord::Schema.define(version: 2020_01_02_103219) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "addresses", force: :cascade do |t|
     t.string "data", null: false
@@ -25,10 +28,19 @@ ActiveRecord::Schema.define(version: 2019_12_22_134411) do
   create_table "email_addresses", force: :cascade do |t|
     t.string "email", null: false
     t.boolean "primary", default: false, null: false
-    t.integer "user_id"
+    t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_email_addresses_on_user_id"
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.string "title"
+    t.text "content"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.boolean "primary", default: false, null: false
+    t.index ["primary"], name: "index_posts_on_primary", unique: true, where: "(\"primary\" IS TRUE)"
   end
 
   create_table "users", force: :cascade do |t|
