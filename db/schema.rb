@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_02_103219) do
+ActiveRecord::Schema.define(version: 2020_01_02_182621) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 2020_01_02_103219) do
     t.string "owner_type", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["owner_id", "owner_type", "default"], name: "index_addresses_on_owner_id_and_owner_type_and_default", unique: true, where: "(\"default\" IS TRUE)"
     t.index ["owner_id", "owner_type"], name: "index_addresses_on_owner_id_and_owner_type"
   end
 
@@ -31,6 +32,7 @@ ActiveRecord::Schema.define(version: 2020_01_02_103219) do
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id", "primary"], name: "index_email_addresses_on_user_id_and_primary", unique: true, where: "(\"primary\" IS TRUE)"
     t.index ["user_id"], name: "index_email_addresses_on_user_id"
   end
 
